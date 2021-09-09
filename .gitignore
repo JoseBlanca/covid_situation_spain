@@ -1,0 +1,8 @@
+cache/
+plots/
+src/__pycache__/
+src/config
+src/covid_data
+src/plot
+src/pyenv/
+src/spain_data
