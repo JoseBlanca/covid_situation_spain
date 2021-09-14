@@ -102,12 +102,12 @@ if __name__ == '__main__':
     for region_iso, region_name in region_names_per_iso_code.items():
         if region_iso == 'nd':
             continue
-        plot_path = out_dir / f'evolution_per_age_range.{region_name}.{date_rage_str}.svg'
+        plot_path = out_dir / f'evolution_per_age_range.{region_name}.{date_rage_str}.png'
         plot_age_evolution(plot_path, by_week=True, date_range=DATE_RANGE,
                                      age_ranges=AGE_GROUPS, rate_by_100k=True,
                                      community=region_iso, title=region_name)
 
-        plot_path = out_dir / f'evolution_per_age_range.{region_name}.svg'
+        plot_path = out_dir / f'evolution_per_age_range.{region_name}.png'
         plot_age_evolution(plot_path, by_week=True, date_range=None,
                                      age_ranges=AGE_GROUPS, rate_by_100k=True,
                                      community=region_iso, title=region_name)
@@ -115,12 +115,12 @@ if __name__ == '__main__':
     out_dir = config.AGE_GROUP_PLOT_DIR
     out_dir.mkdir(exist_ok=True)
 
-    plot_path = out_dir / f'evolution_per_age_range.{date_rage_str}.svg'
+    plot_path = out_dir / f'evolution_per_age_range.{date_rage_str}.png'
     plot_age_evolution(plot_path, by_week=True, date_range=DATE_RANGE,
                        age_ranges=AGE_GROUPS, rate_by_100k=True)
 
 
-    plot_path = out_dir / 'evolution_per_age_range.svg'
+    plot_path = out_dir / 'evolution_per_age_range.png'
     plot_age_evolution(plot_path, by_week=True, date_range=None,
                        age_ranges=AGE_GROUPS, rate_by_100k=True)
 
