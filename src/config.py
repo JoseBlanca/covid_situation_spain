@@ -1,4 +1,5 @@
 from pathlib import Path
+from datetime import datetime
 
 BASE_DIR = Path("..").absolute()
 
@@ -52,3 +53,14 @@ REFERENCE_EVOLUTION_COLOR = "#A9A9A9"
 
 DATA_DIR = BASE_DIR / "datos"
 DEMOGRAPHIC_CSV = DATA_DIR / "datos_demograficos_ine.csv.gz"
+
+WAVE_LIMITS = [
+    datetime(2020, 2, 1),
+    datetime(2020, 7, 15),
+    datetime(2020, 10, 11),
+    datetime(2020, 12, 20),
+    datetime(2021, 6, 18),
+    datetime(2021, 10, 31),
+    datetime.now(),
+]
+WAVE_RANGES = [(start, end) for start, end in zip(WAVE_LIMITS[:-1], WAVE_LIMITS[1:])]
